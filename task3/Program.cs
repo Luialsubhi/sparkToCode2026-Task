@@ -113,35 +113,43 @@ namespace task3
             //}
             ///////////////////////////////////////////////////////////////////////////////
 
-            //Membership Expiry Checker
-            Console.WriteLine("Enter the membership expiry date (yyyy-MM-dd):");
-            string inputDate = Console.ReadLine();
-            DateTime d = DateTime.Parse(inputDate);
-            Console.WriteLine(d);
-            Console.WriteLine("today's date is: " + DateTime.Today);
-            double h= (DateTime.Today - d).TotalDays;
-            Console.WriteLine(h);
+            ////Membership Expiry Checker
+            //Console.WriteLine("Enter the membership expiry date (yyyy-MM-dd):");
+            //string inputDate = Console.ReadLine();
+            //DateTime d = DateTime.Parse(inputDate);
+            //Console.WriteLine(d);
+            //Console.WriteLine("today's date is: " + DateTime.Today);
+            //double h= (DateTime.Today - d).TotalDays;
+            //Console.WriteLine(h);
 
-            Console.WriteLine("enter the number of valid days of membership:");
-            int validDays = int.Parse(Console.ReadLine());
+            //Console.WriteLine("enter the number of valid days of membership:");
+            //int validDays = int.Parse(Console.ReadLine());
             
            
 
-            if (validDays > h )
-            {
+            //if (validDays > h )
+            //{
                 
-                Console.WriteLine("active");
-            }
-            else
-            {
-                Console.WriteLine("expired");
-            }
+            //    Console.WriteLine("active");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("expired");
+            //}
             //////////////////////////////////////////////////////////////////
 
+            //Round Up / Round Down Explorer
+            Console.WriteLine("enter decimal number");
+            double dn=double.Parse(Console.ReadLine());
+
+            Console.WriteLine(Math.Round(dn));
+            Console.WriteLine(Math.Ceiling(dn));
+            Console.WriteLine(Math.Floor(dn));
+            /////////////////////////////////////////////////////////
 
 
 
 
-        }  
+        }
     }
 }

@@ -77,43 +77,71 @@ namespace task3
             //////////////////////////////////////////////////////////////////////
 
             //Password Strength Checker
-            
-            Console.WriteLine("Enter password:");
-            string pas = Console.ReadLine();
-           
-            bool islongEnough = pas.Length >= 8;
-            bool wpas = pas.ToUpper().Contains("password");
 
-            if (islongEnough && wpas)
-            {
-                Console.WriteLine("Password is strong.");
-            }
-            
-            else
-            {
-                Console.WriteLine("Password is weak.");
-            }
-            ///////////////////////////////////////////////////////////////////////////////////////
+            //Console.WriteLine("Enter password:");
+            //string pas = Console.ReadLine();
 
-            //Clean Name Comparator
-            Console.WriteLine("Enter the  name:");
-            string name1 = Console.ReadLine().Trim();
+            //bool islongEnough = pas.Length >= 8;
+            //bool wpas = pas.ToUpper().Contains("password");
 
-            Console.WriteLine("Enter the  name:");
-            string name2 = Console.ReadLine().Trim();
-            name1 = name1.ToUpper();
-            name2 = name2.ToUpper();
-            if (name1==name2)
-            { 
-                Console.WriteLine("Match");
-            }
-            else
-            {
-                Console.WriteLine("No Match");
-            }
+            //if (islongEnough && wpas)
+            //{
+            //    Console.WriteLine("Password is strong.");
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("Password is weak.");
+            //}
+            /////////////////////////////////////////////////////////////////////////////////////////
+
+            ////Clean Name Comparator
+            //Console.WriteLine("Enter the  name:");
+            //string name1 = Console.ReadLine().Trim();
+
+            //Console.WriteLine("Enter the  name:");
+            //string name2 = Console.ReadLine().Trim();
+            //name1 = name1.ToUpper();
+            //name2 = name2.ToUpper();
+            //if (name1 == name2)
+            //{
+            //    Console.WriteLine("Match");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Match");
+            //}
             ///////////////////////////////////////////////////////////////////////////////
 
+            //Membership Expiry Checker
+            Console.WriteLine("Enter the membership expiry date (yyyy-MM-dd):");
+            string inputDate = Console.ReadLine();
+            DateTime d = DateTime.Parse(inputDate);
+            Console.WriteLine(d);
+            Console.WriteLine("today's date is: " + DateTime.Today);
+            double h= (DateTime.Today - d).TotalDays;
+            Console.WriteLine(h);
 
-        }
+            Console.WriteLine("enter the number of valid days of membership:");
+            int validDays = int.Parse(Console.ReadLine());
+            
+           
+
+            if (validDays > h )
+            {
+                
+                Console.WriteLine("active");
+            }
+            else
+            {
+                Console.WriteLine("expired");
+            }
+            //////////////////////////////////////////////////////////////////
+
+
+
+
+
+        }  
     }
 }

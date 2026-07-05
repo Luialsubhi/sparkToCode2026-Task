@@ -138,14 +138,37 @@ namespace task3
             //}
             //////////////////////////////////////////////////////////////////
 
-            //Round Up / Round Down Explorer
-            Console.WriteLine("enter decimal number");
-            double dn=double.Parse(Console.ReadLine());
+            ////Round Up / Round Down Explorer
+            //Console.WriteLine("enter decimal number");
+            //double dn=double.Parse(Console.ReadLine());
 
-            Console.WriteLine(Math.Round(dn));
-            Console.WriteLine(Math.Ceiling(dn));
-            Console.WriteLine(Math.Floor(dn));
+            //Console.WriteLine(Math.Round(dn));
+            //Console.WriteLine(Math.Ceiling(dn));
+            //Console.WriteLine(Math.Floor(dn));
             /////////////////////////////////////////////////////////
+            
+            //word position finder
+            Console.WriteLine("enter the full sentence");
+            string sen =Console.ReadLine();
+
+            string wd=("my");
+            int fir = sen.IndexOf(wd);
+            int lestp = sen.LastIndexOf(wd);
+
+            if (fir == -1)
+            {
+                Console.WriteLine("not found !!!");
+
+            }
+            else 
+            {
+                Console.WriteLine("frist occurrence :"+fir);
+                Console.WriteLine("last occurrence :" + lestp);
+            }
+
+
+
+           
 
 
 

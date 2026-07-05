@@ -40,23 +40,42 @@ namespace task3
 
             ////////////////////////////////////////////////////////////////////////
 
-            //Subscription End Date
+            ////Subscription End Date
             
-            Console.WriteLine("Enter the number of days of a free trial:");
+            //Console.WriteLine("Enter the number of days of a free trial:");
 
-            try
-            {
-                int days = int.Parse(Console.ReadLine());
-                DateTime currentDate = DateTime.Now;
-                DateTime endDate = currentDate.AddDays(days);
-                Console.WriteLine($"Your free trial will end on: {endDate.ToShortDateString()}");
+            //try
+            //{
+            //    int days = int.Parse(Console.ReadLine());
+            //    DateTime currentDate = DateTime.Now;
+            //    DateTime endDate = currentDate.AddDays(days);
+            //    Console.WriteLine($"Your free trial will end on: {endDate.ToShortDateString()}");
 
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Invalid input. ");
-            }
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("Invalid input. ");
+            //}
             ////////////////////////////////////////////////////////////////////
+
+            //Grade Rounding System
+
+            Console.WriteLine("Enter your grade (0-100):");
+            double grade = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Your rounded grade is: " + Math.Round(grade));
+
+            if (grade > 60)
+            {
+                Console.WriteLine("You have passed.");
+
+            }
+            else
+            {
+                Console.WriteLine("You have failed.");
+            }
+            //////////////////////////////////////////////////////////////////////
+
 
 
 

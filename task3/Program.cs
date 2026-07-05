@@ -1,4 +1,6 @@
-﻿namespace task3
+﻿using System.Reflection.Metadata;
+
+namespace task3
 {
     internal class Program
     {
@@ -14,7 +16,7 @@
             //Console.WriteLine($"The absolute difference between {num1} and {num2} is: {Math.Abs(num2 - num1)}");
 
             ///////////////////////////////////////////////////////////////////
-            
+
             //power and root example
             //Console.WriteLine("Enter the number:");
             //float number = float.Parse(Console.ReadLine());
@@ -23,18 +25,44 @@
             //Console.WriteLine("the root of the number is: " + Math.Sqrt(number));
 
             /////////////////////////////////////////////////////////////////////
+
+            ////Name Formatter
+            //Console.WriteLine("Enter your full name:");
+            //string fullName = Console.ReadLine();
+
+            //string input = fullName.ToUpper();
+            //string input2 = fullName.ToLower();
+            //int length = fullName.Length;
+
+            //Console.WriteLine("Your name in uppercase: " + input);
+            //Console.WriteLine("Your name in lowercase: " + input2);
+            //Console.WriteLine("The length of your name is: " + length);
+
+            ////////////////////////////////////////////////////////////////////////
+
+            //Subscription End Date
             
-            //Name Formatter
-            Console.WriteLine("Enter your full name:");
-            string fullName = Console.ReadLine();
+            Console.WriteLine("Enter the number of days of a free trial:");
 
-            string input = fullName.ToUpper();
-            string input2 = fullName.ToLower();
-            int length = fullName.Length;
+            try
+            {
+                int days = int.Parse(Console.ReadLine());
+                DateTime currentDate = DateTime.Now;
+                DateTime endDate = currentDate.AddDays(days);
+                Console.WriteLine($"Your free trial will end on: {endDate.ToShortDateString()}");
 
-            Console.WriteLine("Your name in uppercase: " + input);
-            Console.WriteLine("Your name in lowercase: " + input2);
-            Console.WriteLine("The length of your name is: " + length);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input. ");
+            }
+            ////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
         }
     }
 }

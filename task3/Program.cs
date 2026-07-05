@@ -41,7 +41,7 @@ namespace task3
             ////////////////////////////////////////////////////////////////////////
 
             ////Subscription End Date
-            
+
             //Console.WriteLine("Enter the number of days of a free trial:");
 
             //try
@@ -58,29 +58,42 @@ namespace task3
             //}
             ////////////////////////////////////////////////////////////////////
 
-            //Grade Rounding System
+            ////Grade Rounding System
 
-            Console.WriteLine("Enter your grade (0-100):");
-            double grade = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your grade (0-100):");
+            //double grade = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Your rounded grade is: " + Math.Round(grade));
+            //Console.WriteLine("Your rounded grade is: " + Math.Round(grade));
 
-            if (grade > 60)
-            {
-                Console.WriteLine("You have passed.");
+            //if (grade > 60)
+            //{
+            //    Console.WriteLine("You have passed.");
 
-            }
-            else
-            {
-                Console.WriteLine("You have failed.");
-            }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You have failed.");
+            //}
             //////////////////////////////////////////////////////////////////////
 
+            //Password Strength Checker
+            
+            Console.WriteLine("Enter password:");
+            string pas = Console.ReadLine();
+           
+            bool islongEnough = pas.Length >= 8;
+            bool wpas = pas.ToUpper().Contains("password");
 
-
-
-
-
+            if (islongEnough && wpas)
+            {
+                Console.WriteLine("Password is strong.");
+            }
+            
+            else
+            {
+                Console.WriteLine("Password is weak.");
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////
 
         }
     }

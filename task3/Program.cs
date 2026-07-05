@@ -95,6 +95,25 @@ namespace task3
             }
             ///////////////////////////////////////////////////////////////////////////////////////
 
+            //Clean Name Comparator
+            Console.WriteLine("Enter the  name:");
+            string name1 = Console.ReadLine().Trim();
+
+            Console.WriteLine("Enter the  name:");
+            string name2 = Console.ReadLine().Trim();
+            name1 = name1.ToUpper();
+            name2 = name2.ToUpper();
+            if (name1==name2)
+            { 
+                Console.WriteLine("Match");
+            }
+            else
+            {
+                Console.WriteLine("No Match");
+            }
+            ///////////////////////////////////////////////////////////////////////////////
+
+
         }
     }
 }

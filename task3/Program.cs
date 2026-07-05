@@ -126,12 +126,12 @@ namespace task3
 
             //Console.WriteLine("enter the number of valid days of membership:");
             //int validDays = int.Parse(Console.ReadLine());
-            
-           
+
+
 
             //if (validDays > h )
             //{
-                
+
             //    Console.WriteLine("active");
             //}
             //else
@@ -148,7 +148,7 @@ namespace task3
             //Console.WriteLine(Math.Ceiling(dn));
             //Console.WriteLine(Math.Floor(dn));
             /////////////////////////////////////////////////////////
-            
+
             //word position finder
             //Console.WriteLine("enter the full sentence");
             //string sen =Console.ReadLine();
@@ -169,38 +169,61 @@ namespace task3
             //}
             /////////////////////////////////////////////////////////////////////
 
-            //One-Time Password (OTP) Generator
+            ////One-Time Password (OTP) Generator
 
-            Random rnd = new Random();
-            int ra=rnd.Next(1000,9999);
-            Console.WriteLine("the otp is :"+ra);
-            Console.WriteLine("---- ");
+            //Random rnd = new Random();
+            //int ra=rnd.Next(1000,9999);
+            //Console.WriteLine("the otp is :"+ra);
+            //Console.WriteLine("---- ");
 
-            int max = 3;
-            bool verified = false;
+            //int max = 3;
+            //bool verified = false;
 
-            for (int i = 0; i <= max; i++)
-            {
-                Console.WriteLine("attempt"+i/max+"enter the otp:");
-                try
-                {
-                    string input2 = Console.ReadLine();
-                    int userG = int.Parse(input2);
-                    if (userG == ra) ;
-                    {
-                        verified = true;
-                        break;
-                       
-                    }
-                    
-                }
-                catch (FormatException) 
-                {
-                    Console.WriteLine("invalid input");
-                }
+            //for (int i = 0; i <= max; i++)
+            //{
+            //    Console.WriteLine("attempt"+i/max+"enter the otp:");
+            //    try
+            //    {
+            //        string input2 = Console.ReadLine();
+            //        int userG = int.Parse(input2);
+            //        if (userG == ra) ;
+            //        {
+            //            verified = true;
+            //            break;
 
-            }
+            //        }
+
+            //    }
+            //    catch (FormatException) 
+            //    {
+            //        Console.WriteLine("invalid input");
+            //    }
+
+            //}
             /////////////////////////////////////////////////////////////////////////////////
+
+            //Birthday Insights
+            Console.WriteLine("Enter the date of birth (yyyy-MM-dd):");
+            string datebirth = Console.ReadLine();
+            try
+            {
+                DateTime bir = DateTime.Parse(datebirth);
+                DateTime today = DateTime.Today;
+
+                DayOfWeek birthDayOfWeek = bir.DayOfWeek;
+                int age = today.Year - bir.Year;
+
+                if (bir.Month > today.Month || (bir.Month == today.Month && bir.Day > today.Day))
+                {
+                    age--;
+                }
+                Console.WriteLine("you were born on a:" +birthDayOfWeek);
+                Console.WriteLine("your age :" + age);
+            }
+            catch (FieldAccessException)
+            {
+                Console.WriteLine("ERROR");
+            }
         }
     }
 }

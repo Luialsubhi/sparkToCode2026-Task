@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata;
+﻿using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 
 namespace task3
 {
@@ -148,31 +150,57 @@ namespace task3
             /////////////////////////////////////////////////////////
             
             //word position finder
-            Console.WriteLine("enter the full sentence");
-            string sen =Console.ReadLine();
+            //Console.WriteLine("enter the full sentence");
+            //string sen =Console.ReadLine();
 
-            string wd=("my");
-            int fir = sen.IndexOf(wd);
-            int lestp = sen.LastIndexOf(wd);
+            //string wd=("my");
+            //int fir = sen.IndexOf(wd);
+            //int lestp = sen.LastIndexOf(wd);
 
-            if (fir == -1)
+            //if (fir == -1)
+            //{
+            //    Console.WriteLine("not found !!!");
+
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("frist occurrence :"+fir);
+            //    Console.WriteLine("last occurrence :" + lestp);
+            //}
+            /////////////////////////////////////////////////////////////////////
+
+            //One-Time Password (OTP) Generator
+
+            Random rnd = new Random();
+            int ra=rnd.Next(1000,9999);
+            Console.WriteLine("the otp is :"+ra);
+            Console.WriteLine("---- ");
+
+            int max = 3;
+            bool verified = false;
+
+            for (int i = 0; i <= max; i++)
             {
-                Console.WriteLine("not found !!!");
+                Console.WriteLine("attempt"+i/max+"enter the otp:");
+                try
+                {
+                    string input2 = Console.ReadLine();
+                    int userG = int.Parse(input2);
+                    if (userG == ra) ;
+                    {
+                        verified = true;
+                        break;
+                       
+                    }
+                    
+                }
+                catch (FormatException) 
+                {
+                    Console.WriteLine("invalid input");
+                }
 
             }
-            else 
-            {
-                Console.WriteLine("frist occurrence :"+fir);
-                Console.WriteLine("last occurrence :" + lestp);
-            }
-
-
-
-           
-
-
-
-
+            /////////////////////////////////////////////////////////////////////////////////
         }
     }
 }

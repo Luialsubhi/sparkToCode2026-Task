@@ -45,6 +45,10 @@
             return (2 * width) + (2 * length);
         }
 
+        public static int GetGreadeLetter(int g) 
+        {
+            return g;
+        }
 
 
         static void Main(string[] args)
@@ -97,21 +101,44 @@
             //}
             ///////////////////////////////////////////////////////
 
-            //Rectangle aree and Perimeter Functions
-            Console.WriteLine("enter the lenth");
-            double inputl=double.Parse(Console.ReadLine());
+            ////Rectangle aree and Perimeter Functions
+            //Console.WriteLine("enter the lenth");
+            //double inputl=double.Parse(Console.ReadLine());
 
-            Console.WriteLine("enter the width");
-            double inputw = double.Parse(Console.ReadLine());
+            //Console.WriteLine("enter the width");
+            //double inputw = double.Parse(Console.ReadLine());
 
-            double A=CalculateArea(inputl, inputw);
-            double P=CalculatePerimeter(inputl,inputw);
+            //double A=CalculateArea(inputl, inputw);
+            //double P=CalculatePerimeter(inputl,inputw);
 
-            Console.WriteLine("the area is :" + A);
-            Console.WriteLine("the perimeter is " + P);
+            //Console.WriteLine("the area is :" + A);
+            //Console.WriteLine("the perimeter is " + P);
 
             /////////////////////////////////////////////////////
            
+            //Gred Letter Function
+            Console.WriteLine("enter your gred");
+            int gred = int.Parse(Console.ReadLine());
+            if (gred > 90)
+            {
+                Console.WriteLine("A");
+            }
+            if (gred < 90 && gred > 80) 
+            {
+                Console.WriteLine("B");
+            }
+            if (gred < 80 && gred > 65) 
+            {
+                Console.WriteLine("C");  
+            }
+            if (gred < 65 && gred > 50)
+            {
+               Console.WriteLine("D");
+            }
+            else
+            {
+                Console.WriteLine("F");
+            }
         }
     }
 }

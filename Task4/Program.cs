@@ -36,8 +36,17 @@
             
         }
 
+        public static double CalculateArea(double length,double width) 
+        {
+            return length * width;
+        }
+        public static double CalculatePerimeter(double length, double width)
+        {
+            return (2 * width) + (2 * length);
+        }
 
-        
+
+
         static void Main(string[] args)
         {
             ////personailzed Welcome Function
@@ -68,26 +77,41 @@
             
             //Fixed Menu Display Function
 
-            DisplayMenu();
+            //DisplayMenu();
 
             //////////////////////////////////////////////////////////////
-            
-            // Even or Odd Function
 
-            Console.WriteLine("enter the number ");
-            int input3=int.Parse(Console.ReadLine());
-            int r = IsEven(input3); 
+            //// Even or Odd Function
 
-            if (r==0)
-            {
-                Console.WriteLine("the number even" );
-            }
-            else 
-            {
-                Console.WriteLine("the number odd");
-            }
+            //Console.WriteLine("enter the number ");
+            //int input3=int.Parse(Console.ReadLine());
+            //int r = IsEven(input3); 
 
-            
+            //if (r==0)
+            //{
+            //    Console.WriteLine("the number even" );
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("the number odd");
+            //}
+            ///////////////////////////////////////////////////////
+
+            //Rectangle aree and Perimeter Functions
+            Console.WriteLine("enter the lenth");
+            double inputl=double.Parse(Console.ReadLine());
+
+            Console.WriteLine("enter the width");
+            double inputw = double.Parse(Console.ReadLine());
+
+            double A=CalculateArea(inputl, inputw);
+            double P=CalculatePerimeter(inputl,inputw);
+
+            Console.WriteLine("the area is :" + A);
+            Console.WriteLine("the perimeter is " + P);
+
+            /////////////////////////////////////////////////////
+           
         }
     }
 }

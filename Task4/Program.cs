@@ -45,9 +45,13 @@
             return (2 * width) + (2 * length);
         }
 
-        public static int GetGreadeLetter(int g) 
+        public static string GetGreadeLetter(int g) 
         {
-            return g;
+            if (g >= 90) { return "A"; }
+            else if (g >=80) { return "B"; }
+            else if (g >=70) { return "C"; }
+            else if (g >=60) { return "D"; }
+            else { return "F"; }
         }
         public static void Countdown(int start)
         {
@@ -124,33 +128,19 @@
             /////////////////////////////////////////////////////
            
             //Gred Letter Function
-            Console.WriteLine("enter your greae");
-            int gred = int.Parse(Console.ReadLine());
-            if (gred > 90)
-            {
-                Console.WriteLine("A");
-            }
-            if (gred < 90 && gred > 80) 
-            {
-                Console.WriteLine("B");
-            }
-            if (gred < 80 && gred > 65) 
-            {
-                Console.WriteLine("C");  
-            }
-            if (gred < 65 && gred > 50)
-            {
-               Console.WriteLine("D");
-            }
-            else
-            {
-                Console.WriteLine("F");
-            }
+            Console.WriteLine("enter your grade");
+            int grade = Convert.ToInt32(Console.ReadLine());
+            string usergrede = GetGreadeLetter(grade);
+            Console.WriteLine("your grade is : " + usergrede);
+           
             ////////////////////////////////////////////////////////
             
             Console.WriteLine(" enter the number");
             int startnum = Convert.ToInt32(Console.ReadLine());
             Countdown(startnum);
+            
+            /////////////////////////////////////////////////////////////////
+
         }
     }
 }

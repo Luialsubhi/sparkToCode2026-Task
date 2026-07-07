@@ -9,11 +9,30 @@
             Console.WriteLine("welcome " + name);
             
         }
+       
         public static int aSquare(int num )
         {
             return num*num;
 
         }
+
+        public static double CelsiusToFahrenheit(double C) 
+        {
+            return (C * 9 / 5) + 32;
+        }
+
+        public static void DisplayMenu()
+        { 
+            Console.WriteLine("   menu  ");
+            Console.WriteLine("1-Start");
+            Console.WriteLine("2-Help");
+            Console.WriteLine("3-EXIT");
+
+        }
+
+
+
+        
         static void Main(string[] args)
         {
             ////personailzed Welcome Function
@@ -33,9 +52,18 @@
             
             /////////////////////////////////////////////////////////////
             
-            //colsius to fahrenheit function
+            ////colsius to fahrenheit function
 
+            //Console.WriteLine("enter the tempresher C : ");
+            //double input2=double.Parse(Console.ReadLine());
+            //double Fahrenheit = CelsiusToFahrenheit(input2);
+            //Console.WriteLine("the tembrecher " + Fahrenheit + " F");
 
+            //////////////////////////////////////////////////////////////
+            
+            //Fixed Menu Display Function
+
+            DisplayMenu();
 
             
         }

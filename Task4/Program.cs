@@ -30,6 +30,11 @@
 
         }
 
+        public static int  IsEven(int  x)
+        {
+            return x % 2 ;
+            
+        }
 
 
         
@@ -64,6 +69,23 @@
             //Fixed Menu Display Function
 
             DisplayMenu();
+
+            //////////////////////////////////////////////////////////////
+            
+            // Even or Odd Function
+
+            Console.WriteLine("enter the number ");
+            int input3=int.Parse(Console.ReadLine());
+            int r = IsEven(input3); 
+
+            if (r==0)
+            {
+                Console.WriteLine("the number even" );
+            }
+            else 
+            {
+                Console.WriteLine("the number odd");
+            }
 
             
         }

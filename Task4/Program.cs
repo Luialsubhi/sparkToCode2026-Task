@@ -49,8 +49,15 @@
         {
             return g;
         }
+        public static void Countdown(int start)
+        {
+            for (int i = start; i>=1; i--)
+            {
+                Console.WriteLine(i+"");
 
-
+            }
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
             ////personailzed Welcome Function
@@ -117,7 +124,7 @@
             /////////////////////////////////////////////////////
            
             //Gred Letter Function
-            Console.WriteLine("enter your gred");
+            Console.WriteLine("enter your greae");
             int gred = int.Parse(Console.ReadLine());
             if (gred > 90)
             {
@@ -139,6 +146,11 @@
             {
                 Console.WriteLine("F");
             }
+            ////////////////////////////////////////////////////////
+            
+            Console.WriteLine(" enter the number");
+            int startnum = Convert.ToInt32(Console.ReadLine());
+            Countdown(startnum);
         }
     }
 }

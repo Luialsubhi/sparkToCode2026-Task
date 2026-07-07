@@ -25,13 +25,17 @@
 
             //spuare number function
 
-            Console.WriteLine("enter the number");
-            int input=Convert.ToInt32(Console.ReadLine());
-            int result =aSquare(input);
-            Console.WriteLine("the number is " + result);
+            //Console.WriteLine("enter the number");
+            //int input=Convert.ToInt32(Console.ReadLine());
+            //int result =aSquare(input);
+            //Console.WriteLine("the number is " + result);
             
             
-            /////////////////////
+            /////////////////////////////////////////////////////////////
+            
+            //colsius to fahrenheit function
+
+
 
             
         }

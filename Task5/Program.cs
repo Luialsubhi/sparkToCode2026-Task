@@ -18,7 +18,7 @@
             //    Console.WriteLine(grade);
             //}
             /////////////////////////////////////////////////////////////
-            
+
             ////Dynamic To-Do List
             //List<string> Items = new List<string>();
             //for (int j = 0; j < 5; j++)
@@ -37,7 +37,7 @@
             //    number++;
             //}
             /////////////////////////////////////////////////////////////////
-            
+
             ////Browsing History Stack
             //Stack<string> URLs = new Stack<string>();
             //for (int k = 0; k < 3; k++)
@@ -51,19 +51,43 @@
             //Console.WriteLine("this urls");
             //Console.WriteLine(URLs.Peek());
             /////////////////////////////////////////////////////////////////
-            
-            //Customer Service Queue
-            Queue<string> Enqueues = new Queue<string>();
-            for (int e= 0; e < 3; e++) 
-            { 
-                Console.WriteLine("enter the nume"+(e+1));
-                string enq =Console.ReadLine();
-                
-                Enqueues.Enqueue(enq);
 
-            } 
-            string servedcust =Enqueues.Dequeue();
-            Console.WriteLine("Customer served  :" + servedcust);
+            ////Customer Service Queue
+            //Queue<string> Enqueues = new Queue<string>();
+            //for (int e= 0; e < 3; e++) 
+            //{ 
+            //    Console.WriteLine("enter the nume"+(e+1));
+            //    string enq =Console.ReadLine();
+
+            //    Enqueues.Enqueue(enq);
+
+            //} 
+            //string servedcust =Enqueues.Dequeue();
+            //Console.WriteLine("Customer served  :" + servedcust);
+            //////////////////////////////////////////////////////////////////////
+
+            //Array Grade Range
+            int[] g = new int[5];
+            for (int h = 0; h < g.Length; h++)
+            {
+                Console.WriteLine("enter grade" + (h + 1));
+                g[h] = int.Parse(Console.ReadLine());
+            }
+            Array.Sort(g);
+
+            int sum = 0;
+
+            for (int h = 0; h < g.Length; h++)
+            {
+                sum += g[h];
+            }
+            double average = sum / 5.0;
+
+            Console.WriteLine("Results");
+            Console.WriteLine("LOWER GRADE  : " + g[0]);
+            Console.WriteLine("HIGHEST GRADE  : " + g[g.Length - 1]);
+            Console.WriteLine("average  : " + average);
+
 
         }
     }

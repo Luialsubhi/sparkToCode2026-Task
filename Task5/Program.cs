@@ -66,28 +66,54 @@
             //Console.WriteLine("Customer served  :" + servedcust);
             //////////////////////////////////////////////////////////////////////
 
-            //Array Grade Range
-            int[] g = new int[5];
-            for (int h = 0; h < g.Length; h++)
+            ////Array Grade Range
+            //int[] g = new int[5];
+            //for (int h = 0; h < g.Length; h++)
+            //{
+            //    Console.WriteLine("enter grade" + (h + 1));
+            //    g[h] = int.Parse(Console.ReadLine());
+            //}
+            //Array.Sort(g);
+
+            //int sum = 0;
+
+            //for (int h = 0; h < g.Length; h++)
+            //{
+            //    sum += g[h];
+            //}
+            //double average = sum / 5.0;
+
+            //Console.WriteLine("Results");
+            //Console.WriteLine("LOWER GRADE  : " + g[0]);
+            //Console.WriteLine("HIGHEST GRADE  : " + g[g.Length - 1]);
+            //Console.WriteLine("average  : " + average);
+            //////////////////////////////////////////////////////////////////////////////////////
+            
+            //Filtered Shopping List
+            List<string> shopping = new List<string>();
+            while (true)
             {
-                Console.WriteLine("enter grade" + (h + 1));
-                g[h] = int.Parse(Console.ReadLine());
+                Console.WriteLine("enter item or finish write ('done') :");
+                string it = Console.ReadLine();
+                if (it == "done") { break; }
+                shopping.Add(it);
             }
-            Array.Sort(g);
-
-            int sum = 0;
-
-            for (int h = 0; h < g.Length; h++)
+            Console.WriteLine("shopping lest before remove");
+            foreach (string it in shopping)
             {
-                sum += g[h];
+                Console.WriteLine($"{it}");
             }
-            double average = sum / 5.0;
+            Console.WriteLine("enter item to remove ");
+            string removeItem = Console.ReadLine();
 
-            Console.WriteLine("Results");
-            Console.WriteLine("LOWER GRADE  : " + g[0]);
-            Console.WriteLine("HIGHEST GRADE  : " + g[g.Length - 1]);
-            Console.WriteLine("average  : " + average);
+            shopping.Remove(removeItem);
 
+            Console.WriteLine("shopping lest after remove");
+            foreach(string it in shopping)
+            {
+                Console.WriteLine("- "+it);
+            }
+            ///////////////////////////////////////////////////////////////////////////////
 
         }
     }

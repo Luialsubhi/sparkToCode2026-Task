@@ -38,18 +38,32 @@
             //}
             /////////////////////////////////////////////////////////////////
             
-            //Browsing History Stack
-            Stack<string> URLs = new Stack<string>();
-            for (int k = 0; k < 3; k++)
-            {
-                Console.WriteLine("enter the URL "+(k+1));
-                string url =Console.ReadLine();
-                URLs.Push(url);
-            }
-            URLs.Pop();
+            ////Browsing History Stack
+            //Stack<string> URLs = new Stack<string>();
+            //for (int k = 0; k < 3; k++)
+            //{
+            //    Console.WriteLine("enter the URL "+(k+1));
+            //    string url =Console.ReadLine();
+            //    URLs.Push(url);
+            //}
+            //URLs.Pop();
 
-            Console.WriteLine("this urls");
-            Console.WriteLine(URLs.Peek());
+            //Console.WriteLine("this urls");
+            //Console.WriteLine(URLs.Peek());
+            /////////////////////////////////////////////////////////////////
+            
+            //Customer Service Queue
+            Queue<string> Enqueues = new Queue<string>();
+            for (int e= 0; e < 3; e++) 
+            { 
+                Console.WriteLine("enter the nume"+(e+1));
+                string enq =Console.ReadLine();
+                
+                Enqueues.Enqueue(enq);
+
+            } 
+            string servedcust =Enqueues.Dequeue();
+            Console.WriteLine("Customer served  :" + servedcust);
 
         }
     }

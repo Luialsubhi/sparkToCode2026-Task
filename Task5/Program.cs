@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+       
         static void Main(string[] args)
         {
             ////Fixed Grade Array
@@ -135,31 +136,61 @@
             //}
             ////////////////////////////////////////////////////////////////////////////
 
-            //Undo Last Action
-            Stack<string> Actions = new Stack<string>();
-            while (true)
+            ////Undo Last Action
+            //Stack<string> Actions = new Stack<string>();
+            //while (true)
+            //{
+            //    Console.WriteLine("enter actions or type 'stop'");
+            //    string action = Console.ReadLine();
+
+            //    if (action == "stop")
+            //    {
+            //        break;
+            //    }
+            //    Actions.Push(action);
+
+            //}
+            //Console.WriteLine("Undo actions");
+
+            //Console.WriteLine(Actions.Pop());
+            //Console.WriteLine(Actions.Pop());
+
+            //Console.WriteLine("Remaining actions ");
+
+            //foreach (string action in Actions)
+            //{
+            //    Console.WriteLine(action);
+            //}
+
+            //////////////////////////////////////////////////////////////////////
+
+            //grade Analyzer with functions
+            
+            List<int> ggrades = new List<int>();
+
+            Console.WriteLine(" hom many grades ");
+            int ggg= int .Parse(Console.ReadLine());
+
+            for (int y = 0; y < ggg; y++)
             {
-                Console.WriteLine("enter actions or type 'stop'");
-                string action = Console.ReadLine();
+                Console.WriteLine("enter grade" + (y + 1));
+                int gra = int .Parse(Console.ReadLine());
 
-                if (action == "stop")
-                {
-                    break;
-                }
-                Actions.Push(action);
-
+                ggrades.Add(gra);
             }
-            Console.WriteLine("Undo actions");
+            double ev = CalculateAverage(ggrades);
+            int fai = f(ggrades);
 
-            Console.WriteLine(Actions.Pop());
-            Console.WriteLine(Actions.Pop());
-
-            Console.WriteLine("Remaining actions ");
-
-            foreach (string action in Actions)
+            Console.WriteLine("average"+ ev);
+            if (fai == 0)
             {
-                Console.WriteLine(action);
+                Console.WriteLine("no failing");
             }
+            else
+            {
+                Console.WriteLine("frist failing"+fai);
+            }
+
 
 
 
@@ -168,5 +199,22 @@
 
 
         }
+        //grade Analyzer with functions
+        public static double CalculateAverage(List<int> ggrades)
+        {
+            int sum = 0;
+            foreach (int gr in ggrades)
+            {
+                sum += gr;
+            }
+            return sum/(double)ggrades.Count;
+        }
+
+        static int f(List<int> grs)
+        {
+            return grs.Find(x => x < 60);
+        }
+
+
     }
 }

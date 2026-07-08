@@ -90,31 +90,51 @@
             //////////////////////////////////////////////////////////////////////////////////////
             
             //Filtered Shopping List
-            List<string> shopping = new List<string>();
-            while (true)
-            {
-                Console.WriteLine("enter item or finish write ('done') :");
-                string it = Console.ReadLine();
-                if (it == "done") { break; }
-                shopping.Add(it);
-            }
-            Console.WriteLine("shopping lest before remove");
-            foreach (string it in shopping)
-            {
-                Console.WriteLine($"{it}");
-            }
-            Console.WriteLine("enter item to remove ");
-            string removeItem = Console.ReadLine();
+            //List<string> shopping = new List<string>();
+            //while (true)
+            //{
+            //    Console.WriteLine("enter item or finish write ('done') :");
+            //    string it = Console.ReadLine();
+            //    if (it == "done") { break; }
+            //    shopping.Add(it);
+            //}
+            //Console.WriteLine("shopping lest before remove");
+            //foreach (string it in shopping)
+            //{
+            //    Console.WriteLine($"{it}");
+            //}
+            //Console.WriteLine("enter item to remove ");
+            //string removeItem = Console.ReadLine();
 
-            shopping.Remove(removeItem);
+            //shopping.Remove(removeItem);
 
-            Console.WriteLine("shopping lest after remove");
-            foreach(string it in shopping)
-            {
-                Console.WriteLine("- "+it);
-            }
+            //Console.WriteLine("shopping lest after remove");
+            //foreach(string it in shopping)
+            //{
+            //    Console.WriteLine("- "+it);
+            //}
             ///////////////////////////////////////////////////////////////////////////////
 
+            //High Score Podium
+            List<int> gameScores = new List<int>();
+
+            for (int b = 0; b < 5; b++) 
+            {
+                Console.WriteLine("enter your grade");
+                int score = int.Parse(Console.ReadLine());
+                gameScores.Add(score);
+            }
+            gameScores.Sort();
+            gameScores.Reverse();
+
+            Console.WriteLine(" top 3 scores ");
+
+            Console.WriteLine("1-" + gameScores[0]);
+            Console.WriteLine("2-" + gameScores[1]);
+            Console.WriteLine("3-" + gameScores[2]);
         }
+        ////////////////////////////////////////////////////////////////////////////
+        
+        //
     }
 }

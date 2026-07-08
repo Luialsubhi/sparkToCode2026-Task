@@ -88,7 +88,7 @@
             //Console.WriteLine("HIGHEST GRADE  : " + g[g.Length - 1]);
             //Console.WriteLine("average  : " + average);
             //////////////////////////////////////////////////////////////////////////////////////
-            
+
             //Filtered Shopping List
             //List<string> shopping = new List<string>();
             //while (true)
@@ -115,26 +115,58 @@
             //}
             ///////////////////////////////////////////////////////////////////////////////
 
-            //High Score Podium
-            List<int> gameScores = new List<int>();
+            //    //High Score Podium
+            //    List<int> gameScores = new List<int>();
 
-            for (int b = 0; b < 5; b++) 
+            //    for (int b = 0; b < 5; b++) 
+            //    {
+            //        Console.WriteLine("enter your grade");
+            //        int score = int.Parse(Console.ReadLine());
+            //        gameScores.Add(score);
+            //    }
+            //    gameScores.Sort();
+            //    gameScores.Reverse();
+
+            //    Console.WriteLine(" top 3 scores ");
+
+            //    Console.WriteLine("1-" + gameScores[0]);
+            //    Console.WriteLine("2-" + gameScores[1]);
+            //    Console.WriteLine("3-" + gameScores[2]);
+            //}
+            ////////////////////////////////////////////////////////////////////////////
+
+            //Undo Last Action
+            Stack<string> Actions = new Stack<string>();
+            while (true)
             {
-                Console.WriteLine("enter your grade");
-                int score = int.Parse(Console.ReadLine());
-                gameScores.Add(score);
+                Console.WriteLine("enter actions or type 'stop'");
+                string action = Console.ReadLine();
+
+                if (action == "stop")
+                {
+                    break;
+                }
+                Actions.Push(action);
+
             }
-            gameScores.Sort();
-            gameScores.Reverse();
+            Console.WriteLine("Undo actions");
 
-            Console.WriteLine(" top 3 scores ");
+            Console.WriteLine(Actions.Pop());
+            Console.WriteLine(Actions.Pop());
 
-            Console.WriteLine("1-" + gameScores[0]);
-            Console.WriteLine("2-" + gameScores[1]);
-            Console.WriteLine("3-" + gameScores[2]);
+            Console.WriteLine("Remaining actions ");
+
+            foreach (string action in Actions)
+            {
+                Console.WriteLine(action);
+            }
+
+
+
+
+
+
+
         }
-        ////////////////////////////////////////////////////////////////////////////
-        
-        //
     }
 }

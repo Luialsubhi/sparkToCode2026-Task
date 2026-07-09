@@ -152,6 +152,18 @@ namespace miniproject
         static void ShowBalance()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("enter account Number");
+            string accNumber = Console.ReadLine();
+
+            int index = accountNumbers.IndexOf(accNumber);
+            if (index == -1)
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
+            Console.WriteLine("customer name : " + customerNames[index]);
+            Console.WriteLine("account number : " + accountNumbers[index]);
+            Console.WriteLine("current balance :  " + balances[index]);
         }
         static void TransferAmount()
         {

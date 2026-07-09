@@ -128,6 +128,26 @@ namespace miniproject
         static void WithdrawMoney()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("enter account Number");
+            string accNumber = Console.ReadLine();
+
+            int index = accountNumbers.IndexOf(accNumber);
+            if (index == -1)
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
+            Console.WriteLine("enter the Withdraw Money ");
+            double amount;
+
+            if(!double.TryParse(Console.ReadLine(),out amount) || amount <= 0 || amount > balances[index])
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
+            balances[index] -= amount;
+            Console.WriteLine(" Withdraw Money  :" + balances[index]);
+
         }
         static void ShowBalance()
         {

@@ -22,7 +22,7 @@ namespace miniproject
                 Console.WriteLine("4. Show Balance");
                 Console.WriteLine("5. Transfer Amount");
                 Console.WriteLine("6. Apply Interest To All");
-                Console.WriteLine("7. <your 2nd custom service - choose a name>");
+                Console.WriteLine("7. List All Account");
                 Console.WriteLine("8. Exit");
                 Console.Write("Choose an option: ");
                 int choice;
@@ -59,7 +59,7 @@ namespace miniproject
                         break;
                     case 7:
                         // TODO: call your second custom service function here
-                        
+                        ListAllAccounts();
                         break;
                     case 8:
                         exitApp = true;
@@ -216,7 +216,23 @@ namespace miniproject
                 Console.WriteLine("account : " + accountNumbers[i] + "  " + customerNames[i] + " added " + interest + "-> new balance: " + balances[i]);
             }
             Console.WriteLine("Successfully 1%");
+
         }
+        /////////////////////////////////////////////////////////////////////////
+        static void ListAllAccounts()
+        {
+            Console.WriteLine(" List All Accounts");
+            if (customerNames.Count == 0)
+            {
+                Console.WriteLine("No account ");
+                return;
+            }
+            for (int k = 0;k < customerNames.Count; k++)
+            {
+                Console.WriteLine(k + k + " name :" + customerNames[k] + "acc no:" + accountNumbers[k] + "balance: " + balances[k]);
+            }
+        }
+
     }
 }
 

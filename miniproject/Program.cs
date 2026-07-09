@@ -168,6 +168,33 @@ namespace miniproject
         static void TransferAmount()
         {
             // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("enter sender account number");
+            string senderaccount = Console.ReadLine();
+
+            Console.WriteLine("enter receiver account number ");
+            string recaccount = Console.ReadLine();
+
+            int senderIndex = accountNumbers.IndexOf(senderaccount);
+            int recIndex = accountNumbers.IndexOf(recaccount);
+
+            if (senderIndex == -1 || recIndex == -1)
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
+            Console.WriteLine("enter Transfer amount");
+            double amount;
+
+            if (!double.TryParse(Console.ReadLine(), out amount) || amount <= 0 || amount > balances[senderIndex])
+            {
+                Console.WriteLine("ERROR");
+                return;
+            }
+            balances[senderIndex] -= amount;
+            balances[recIndex] += amount;
+
+            Console.WriteLine("sender : " + customerNames[senderIndex] + "   new balance : " + balances[senderIndex]);
+            Console.WriteLine(" receiver : " + customerNames[recIndex] + "   new balance : " + balances[recIndex]);
         }
         // TODO: write two more void, no-parameter functions here for
         // your own custom services (option 6 and option 7)

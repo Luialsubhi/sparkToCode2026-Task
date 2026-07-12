@@ -134,8 +134,30 @@
             product2.Price = 16.750;
             product2.StockQuantity =20;
 
-            Console.WriteLine("object created successfully";
+            Console.WriteLine("object created successfully");
             Console.ReadLine();
+
+            /////////////////////////////////////////////////////////////
+            //case 1
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Karim");
+            Console.WriteLine("2. Ali");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
+            {
+                account1.ChaeckBalance();
+            }
+            else if (choice == 2) 
+            { 
+                account2.ChaeckBalance();
+            }
+            else
+            {
+                Console.WriteLine("invalid choise");
+            }
+            Console.ReadLine();
+
 
         }
     }

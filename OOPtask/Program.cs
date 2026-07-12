@@ -61,7 +61,44 @@
     }
     public class product
     {
+        public string productName;
+        public double Price;
+        public int StockQuantity;
 
+        public void Sell(int quantity)
+        {
+            if (StockQuantity >= quantity)
+            {
+                StockQuantity -= quantity;
+            }
+            else
+            {
+                Console.WriteLine("not enough stock");
+
+            }
+            LogTransaction();
+
+        }
+        public void Restock(int quantity) 
+        { 
+            StockQuantity += quantity;
+        
+        }
+        public double GetInventoryValue() 
+        {
+            PrintDetails();
+            return Price * StockQuantity;
+        }
+        public void PrintDetails() 
+        {
+            Console.WriteLine("product" + productName);
+            Console.WriteLine("price"+Price);
+            Console.WriteLine("stock" + StockQuantity);
+        }
+        public void LogTransaction()
+        { 
+            Console.WriteLine("Transaction logged");
+        }
     }
     public class Program
     {

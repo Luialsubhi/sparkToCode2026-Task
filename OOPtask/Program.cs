@@ -1,6 +1,6 @@
 ﻿namespace OOPtask
 {
-     class BankAccount
+     public class BankAccount
     {
         public int AccountNumber; 
         public string HolderName;
@@ -41,7 +41,23 @@
     }
     public class Student
     {
+        public int Grade;
+        public string Name;
+        public string Address;
 
+        private string email;
+        int age;
+
+        public void Register(string Email)
+        {
+            email= Email;
+            SendEmail();
+            
+        }
+        public void SendEmail()
+        {
+            Console.WriteLine("Registration email  sent ");
+        }
     }
     public class product
     {

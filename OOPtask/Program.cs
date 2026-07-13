@@ -465,6 +465,9 @@
                 Console.WriteLine("premium");
             }
             /////////////////////////////////////////////////////////////////////
+            //case 16
+            BankAccount newAccount = new BankAccount(2001,"   omar ",  500);
+            newAccount.ChaeckBalance();
         }
     }
 }

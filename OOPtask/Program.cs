@@ -79,7 +79,7 @@
         {
             studentCount++;
         }
-        public int getStudentCount()
+        public static int GetStudentCount()
         {
             return studentCount;
         }
@@ -483,6 +483,9 @@
             //case 16
             BankAccount newAccount = new BankAccount(2001,"   omar ",  500);
             newAccount.ChaeckBalance();
+            ///////////////////////////////////////////////////////////////////
+            //case 17
+            Console.WriteLine("total student" + Student.GetStudentCount());
 
             ///////////////////////////////////////////////////////
             //cast 18
@@ -501,7 +504,7 @@
             {
                  Console.WriteLine("account is not overdrawn");
             }
-
+            ////////////////////////////////////////////////////////////////////////
         }
     }
 }

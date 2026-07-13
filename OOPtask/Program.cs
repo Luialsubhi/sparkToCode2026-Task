@@ -64,13 +64,28 @@
 
         public void Register(string Email)
         {
-            email= Email;
+            email = Email;
             SendEmail();
-            
+
         }
         public void SendEmail()
         {
             Console.WriteLine("Registration email  sent ");
+        }
+        private static int studentCount = 0;
+        private int pin;
+
+        public Student()
+        {
+            studentCount++;
+        }
+        public int getStudentCount()
+        {
+            return studentCount;
+        }
+        public int PIN
+        {
+            set { pin = value; }
         }
 
     }
@@ -443,7 +458,7 @@
             //}
             ///////////////////////////////////////////////////////////////
             //case 12
-            Console.WriteLine("Transfer TO");
+            Console.WriteLine("choose");
             Console.WriteLine("1. karim");
             Console.WriteLine("2. Ali");
 
@@ -468,6 +483,10 @@
             //case 16
             BankAccount newAccount = new BankAccount(2001,"   omar ",  500);
             newAccount.ChaeckBalance();
+
+            ///////////////////////////////////////////////////////
+            //cast 17
+           
         }
     }
 }

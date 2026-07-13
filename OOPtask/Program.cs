@@ -239,6 +239,21 @@
                 Console.WriteLine("invalid choise");
             }
             ////////////////////////////////////////////////////////////
+            //case 5
+            Console.WriteLine("choose");
+            Console.WriteLine("mose");
+            Console.WriteLine("kebord");
+
+            int choice5 = Convert.ToInt32(Console.ReadLine());
+            if (choice5 == 1)
+            {
+                Console.WriteLine("inventory value" + product1.GetInventoryValue());
+            }
+            else if (choice5 == 2) 
+            {
+                Console.WriteLine("inventory value" + product2.GetInventoryValue());
+            }
+            else { Console.WriteLine("invald"); }
         }
     }
 }

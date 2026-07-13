@@ -323,7 +323,7 @@
             //        {
             //            Console.WriteLine("well stocked");
             //        }
-                    
+
             //    }
             //else if (choice8 == 2)
             //{
@@ -343,35 +343,69 @@
             //    }
             //}
             /////////////////////////////////////////////////////////////
-            //case 9
-            Console.WriteLine("Transfer From");
-            Console.WriteLine("1. karim");
-            Console.WriteLine("2. Ali");
+            ////case 9
+            //Console.WriteLine("Transfer From");
+            //Console.WriteLine("1. karim");
+            //Console.WriteLine("2. Ali");
 
-            int from = Convert.ToInt32(Console.ReadLine());
+            //int from = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Transfer TO");
-            Console.WriteLine("1. karim");
-            Console.WriteLine("2. Ali");
+            //Console.WriteLine("Transfer TO");
+            //Console.WriteLine("1. karim");
+            //Console.WriteLine("2. Ali");
 
-            int to = Convert.ToInt32(Console.ReadLine());
+            //int to = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Amount");
-            double amount = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("Amount");
+            //double amount = Convert.ToDouble(Console.ReadLine());
 
-            BankAccount source =(from ==1)? account1 : account2;
-            BankAccount destination =(to ==1)? account2 : account1;
+            //BankAccount source =(from ==1)? account1 : account2;
+            //BankAccount destination =(to ==1)? account2 : account1;
 
-            if (source.Balance >= amount)
+            //if (source.Balance >= amount)
+            //{
+            //    source.Withdraw(amount);
+            //    destination.Deposit(amount);
+            //    Console.WriteLine("Transfer completed");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Transfer Failed");
+            //}
+
+            //////////////////////////////////////////////////////
+            //case 10
+            Console.WriteLine(" choose student");
+            Console.WriteLine("1.Ali");
+            Console.WriteLine("2.Ahmed");
+
+            int choice10= Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("enter grade");
+
+            if(int.TryParse(Console.ReadLine(), out int grade))
             {
-                source.Withdraw(amount);
-                destination.Deposit(amount);
-                Console.WriteLine("Transfer completed");
+                if (grade >= 0 && grade <= 100)
+                {
+                    if(choice10== 1)
+                        student1.Grade= grade;
+                    else if (choice10== 2)
+                        student2.Grade= grade;
+                    Console.WriteLine("grade updated");                   
+                }
+                else
+                {
+                    Console.WriteLine("grade must be between 0 to 100");
+                }
+
+
             }
             else
             {
-                Console.WriteLine("Transfer Failed");
+                Console.WriteLine("invalid number");
             }
+
+
 
 
 

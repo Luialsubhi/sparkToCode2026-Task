@@ -212,6 +212,33 @@
                 Console.WriteLine("invalid choise");
             }
             /////////////////////////////////////////////////////////////
+            //case 4
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Karim");
+            Console.WriteLine("2. Ali");
+
+            int choice4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the withdraw ");
+            double amount4 = Convert.ToDouble(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                account1.Withdraw(amount4);
+                
+                Console.WriteLine("balance" + account1.Balance);
+
+            }
+            else if (choice == 2)
+            {
+                account1.Withdraw(amount4);
+                
+                Console.WriteLine("balance" + account2.Balance);
+            }
+            else
+            {
+                Console.WriteLine("invalid choise");
+            }
+            ////////////////////////////////////////////////////////////
         }
     }
 }

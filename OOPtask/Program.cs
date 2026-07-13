@@ -38,6 +38,20 @@
         {
             Console.WriteLine("email intinfication sent ");
         }
+        public BankAccount(int accountNumber, string holderName, double balance)
+        {
+            AccountNumber = accountNumber;
+            HolderName = holderName;
+            Balance = balance;
+        }
+        public bool IsOverdrawn
+        {
+            get
+            { 
+                return Balance<0;
+            }
+        }
+        public BankAccount() { }
     }
     public class Student
     {
@@ -58,6 +72,7 @@
         {
             Console.WriteLine("Registration email  sent ");
         }
+
     }
     public class product
     {

@@ -107,7 +107,7 @@
             BankAccount account1 = new BankAccount();
             account1.AccountNumber = 1163;
             account1.HolderName = "Karim";
-            account1.Balance= 120;
+            account1.Balance = 120;
 
             BankAccount account2 = new BankAccount();
             account2.AccountNumber = 15203;
@@ -117,22 +117,22 @@
             Student student1 = new Student();
             student1.Name = "Ali";
             student1.Address = "Muscat";
-            student1.Grade= 65;
+            student1.Grade = 65;
 
             Student student2 = new Student();
             student2.Name = "Ahmed";
             student2.Address = "Muscat";
             student2.Grade = 70;
 
-            product product1=new product();
+            product product1 = new product();
             product1.productName = "wireless mouse";
-            product1.Price =5.500;
+            product1.Price = 5.500;
             product1.StockQuantity = 50;
 
-            product product2=new product();
+            product product2 = new product();
             product2.productName = "mechanical keyboard";
             product2.Price = 16.750;
-            product2.StockQuantity =20;
+            product2.StockQuantity = 20;
 
             Console.WriteLine("object created successfully");
             Console.ReadLine();
@@ -282,12 +282,12 @@
             //}
             /////////////////////////////////////////////////////////////////
             //case 7
-
+          
             if (account1.Balance > account2.Balance)
             {
                 Console.WriteLine(account1.HolderName + "  more meny");
             }
-            else if(account1.Balance < account2.Balance)
+            else if (account1.Balance < account2.Balance)
             {
                 Console.WriteLine(account2.HolderName + "  more many");
             }
@@ -295,8 +295,54 @@
             {
                 Console.WriteLine("equal");
             }
+
+
             ///////////////////////////////////////////////////////////////////
-                
+            //case 8:
+                Console.WriteLine("choose ");
+                Console.WriteLine("muose");
+                Console.WriteLine("Keubord");
+
+                int choice8=Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("emter quantity");
+                int quantity=Convert.ToInt32(Console.ReadLine());
+
+                if (choice8 == 1)
+                {
+                    product.Restock(quantity);
+                    if (product1.StockQuantity < 10)
+                    {
+                        Console.WriteLine("low");
+                    }
+                    else if(product2.StockQuantity < 50)
+                    {
+                        Console.WriteLine("moderate");
+                    }
+                    else
+                    {
+                        Console.WriteLine("well stocked");
+                    }
+                    
+                }
+            else if (choice8 == 2)
+            {
+
+                product2.Restock(quantity);
+                if (product1.StockQuantity < 10)
+                {
+                    Console.WriteLine("low");
+                }
+                else if (product2.StockQuantity < 50) 
+                {
+                    Console.WriteLine("moderate");
+                }
+                else
+                {
+                    Console.WriteLine("well stocked");
+                }
+            }
+
             
         }
     }

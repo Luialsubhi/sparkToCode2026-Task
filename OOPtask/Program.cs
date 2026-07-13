@@ -254,6 +254,32 @@
                 Console.WriteLine("inventory value" + product2.GetInventoryValue());
             }
             else { Console.WriteLine("invald"); }
-        }
+            ///////////////////////////////////////////////////////////////////////
+            //case6
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Ali");
+            Console.WriteLine("2.Ahmed");
+
+            int choice6 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("enter email");
+            string email = Console.ReadLine();
+
+            if (choice6 == 1)
+            {
+                student1.Register(email);
+                Console.WriteLine("student registered successfully");
+            }
+            else if (choice6 == 2)
+            {
+
+                student2.Register(email);
+                Console.WriteLine("student registered successfully");
+            } 
+            else 
+            {
+                Console.WriteLine("invalid");
+            }
+            }
     }
 }

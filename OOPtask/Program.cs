@@ -404,6 +404,29 @@
             {
                 Console.WriteLine("invalid number");
             }
+            ////////////////////////////////////////////////////////////
+            //case 11
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Ali");
+            Console.WriteLine("2.Ahmed");
+
+            int choice11= Convert.ToInt32(Console.ReadLine());
+
+            Student s=(choice11== 1) ? student1 : student2;
+
+            Console.WriteLine("name"+s.Name);
+            Console.WriteLine("address" + s.Address);
+            Console.WriteLine("grade" + s.Grade);
+
+            if (s.Grade >= 60)
+            {
+                Console.WriteLine("pass");
+            }
+            else 
+            { 
+                Console.WriteLine("fail"); 
+            }
+            ///////////////////////////////////////////////////////////////
 
 
 

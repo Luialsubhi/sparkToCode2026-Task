@@ -485,8 +485,23 @@
             newAccount.ChaeckBalance();
 
             ///////////////////////////////////////////////////////
-            //cast 17
-           
+            //cast 18
+            Console.WriteLine("choose");
+            Console.WriteLine("1. karim");
+            Console.WriteLine("2. Ali");
+
+            int choice18 = Convert.ToInt32(Console.ReadLine());
+
+            BankAccount Account = (choice18 == 1) ? account1 : account2;
+            if (account.IsOverdrawn)
+            {
+                Console.WriteLine("account is overdrawn");
+            }
+            else 
+            {
+                 Console.WriteLine("account is not overdrawn");
+            }
+
         }
     }
 }

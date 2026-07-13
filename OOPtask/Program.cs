@@ -375,63 +375,81 @@
 
             //////////////////////////////////////////////////////
             //case 10
-            Console.WriteLine(" choose student");
-            Console.WriteLine("1.Ali");
-            Console.WriteLine("2.Ahmed");
+            //Console.WriteLine(" choose student");
+            //Console.WriteLine("1.Ali");
+            //Console.WriteLine("2.Ahmed");
 
-            int choice10= Convert.ToInt32(Console.ReadLine());
+            //int choice10= Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("enter grade");
+            //Console.WriteLine("enter grade");
 
-            if(int.TryParse(Console.ReadLine(), out int grade))
+            //if(int.TryParse(Console.ReadLine(), out int grade))
+            //{
+            //    if (grade >= 0 && grade <= 100)
+            //    {
+            //        if(choice10== 1)
+            //            student1.Grade= grade;
+            //        else if (choice10== 2)
+            //            student2.Grade= grade;
+            //        Console.WriteLine("grade updated");                   
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("grade must be between 0 to 100");
+            //    }
+
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine("invalid number");
+            //}
+            //////////////////////////////////////////////////////////////
+            ////case 11
+            //Console.WriteLine("choose");
+            //Console.WriteLine("1.Ali");
+            //Console.WriteLine("2.Ahmed");
+
+            //int choice11= Convert.ToInt32(Console.ReadLine());
+
+            //Student s=(choice11== 1) ? student1 : student2;
+
+            //Console.WriteLine("name  "+s.Name);
+            //Console.WriteLine("address  " + s.Address);
+            //Console.WriteLine("grade   " + s.Grade);
+
+            //if (s.Grade >= 60)
+            //{
+            //    Console.WriteLine("pass");
+            //}
+            //else 
+            //{ 
+            //    Console.WriteLine("fail"); 
+            //}
+            ///////////////////////////////////////////////////////////////
+            //case 12
+            Console.WriteLine("Transfer TO");
+            Console.WriteLine("1. karim");
+            Console.WriteLine("2. Ali");
+
+            int choice12 = Convert.ToInt32(Console.ReadLine());
+
+            BankAccount account =(choice12 == 1) ? account1 : account2;
+
+            if (account.Balance < 50)
             {
-                if (grade >= 0 && grade <= 100)
-                {
-                    if(choice10== 1)
-                        student1.Grade= grade;
-                    else if (choice10== 2)
-                        student2.Grade= grade;
-                    Console.WriteLine("grade updated");                   
-                }
-                else
-                {
-                    Console.WriteLine("grade must be between 0 to 100");
-                }
+                Console.WriteLine("low balance");
 
-
+            }
+            else if (account.Balance <= 1000)
+            {
+                Console.WriteLine("heelthy");
             }
             else
             {
-                Console.WriteLine("invalid number");
+                Console.WriteLine("premium");
             }
-            ////////////////////////////////////////////////////////////
-            //case 11
-            Console.WriteLine("choose");
-            Console.WriteLine("1.Ali");
-            Console.WriteLine("2.Ahmed");
-
-            int choice11= Convert.ToInt32(Console.ReadLine());
-
-            Student s=(choice11== 1) ? student1 : student2;
-
-            Console.WriteLine("name"+s.Name);
-            Console.WriteLine("address" + s.Address);
-            Console.WriteLine("grade" + s.Grade);
-
-            if (s.Grade >= 60)
-            {
-                Console.WriteLine("pass");
-            }
-            else 
-            { 
-                Console.WriteLine("fail"); 
-            }
-            ///////////////////////////////////////////////////////////////
-
-
-
-
-
+            /////////////////////////////////////////////////////////////////////
         }
     }
 }

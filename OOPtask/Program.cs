@@ -158,7 +158,31 @@
             }
             Console.ReadLine();
 
+            /////////////////////////////////////////////////////////////
+            //case 2
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Ali");
+            Console.WriteLine("2. Ahmed");
 
+            int choice2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the new adderse");
+            string newAddress = Console.ReadLine();
+
+            if (choice2 == 1)
+            {
+                student1.Address = newAddress;
+                Console.WriteLine("new adders   " + student1.Address);
+
+            }
+            else if (choice2 == 2)
+            {
+                student2.Address = newAddress;
+                Console.WriteLine("new addres" + student2.Address);
+            }
+            else
+            {
+                Console.WriteLine("invalid");
+            }
         }
     }
 }

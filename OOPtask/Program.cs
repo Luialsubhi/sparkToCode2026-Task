@@ -183,6 +183,35 @@
             {
                 Console.WriteLine("invalid");
             }
+
+            /////////////////////////////////////////////////////////
+            //case 3
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Karim");
+            Console.WriteLine("2. Ali");
+
+            int choice3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter the amount ");
+            double amount = Convert.ToDouble(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                account1.Deposit(amount);
+                Console.WriteLine("holder" + account1.HolderName);
+                Console.WriteLine("balance" + account1.Balance);
+
+            }
+            else if (choice == 2)
+            {
+                account1.Deposit(amount);
+                Console.WriteLine("holder" + account2.HolderName);
+                Console.WriteLine("balance" + account2.Balance);
+            }
+            else
+            {
+                Console.WriteLine("invalid choise");
+            }
+            /////////////////////////////////////////////////////////////
         }
     }
 }

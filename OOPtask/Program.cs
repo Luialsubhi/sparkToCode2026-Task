@@ -298,52 +298,83 @@
 
 
             ///////////////////////////////////////////////////////////////////
-            //case 8:
-                Console.WriteLine("choose ");
-                Console.WriteLine("muose");
-                Console.WriteLine("Keubord");
+            ////case 8:
+            //    Console.WriteLine("choose ");
+            //    Console.WriteLine("muose");
+            //    Console.WriteLine("Keubord");
 
-                int choice8=Convert.ToInt32(Console.ReadLine());
+            //    int choice8=Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("emter quantity");
-                int quantity=Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine("emter quantity");
+            //    int quantity=Convert.ToInt32(Console.ReadLine());
 
-                if (choice8 == 1)
-                {
-                    product.Restock(quantity);
-                    if (product1.StockQuantity < 10)
-                    {
-                        Console.WriteLine("low");
-                    }
-                    else if(product2.StockQuantity < 50)
-                    {
-                        Console.WriteLine("moderate");
-                    }
-                    else
-                    {
-                        Console.WriteLine("well stocked");
-                    }
+            //    if (choice8 == 1)
+            //    {
+            //        product.Restock(quantity);
+            //        if (product1.StockQuantity < 10)
+            //        {
+            //            Console.WriteLine("low");
+            //        }
+            //        else if(product2.StockQuantity < 50)
+            //        {
+            //            Console.WriteLine("moderate");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("well stocked");
+            //        }
                     
-                }
-            else if (choice8 == 2)
-            {
+            //    }
+            //else if (choice8 == 2)
+            //{
 
-                product2.Restock(quantity);
-                if (product1.StockQuantity < 10)
-                {
-                    Console.WriteLine("low");
-                }
-                else if (product2.StockQuantity < 50) 
-                {
-                    Console.WriteLine("moderate");
-                }
-                else
-                {
-                    Console.WriteLine("well stocked");
-                }
+            //    product2.Restock(quantity);
+            //    if (product1.StockQuantity < 10)
+            //    {
+            //        Console.WriteLine("low");
+            //    }
+            //    else if (product2.StockQuantity < 50) 
+            //    {
+            //        Console.WriteLine("moderate");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("well stocked");
+            //    }
+            //}
+            /////////////////////////////////////////////////////////////
+            //case 9
+            Console.WriteLine("Transfer From");
+            Console.WriteLine("1. karim");
+            Console.WriteLine("2. Ali");
+
+            int from = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Transfer TO");
+            Console.WriteLine("1. karim");
+            Console.WriteLine("2. Ali");
+
+            int to = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Amount");
+            double amount = Convert.ToDouble(Console.ReadLine());
+
+            BankAccount source =(from ==1)? account1 : account2;
+            BankAccount destination =(to ==1)? account2 : account1;
+
+            if (source.Balance >= amount)
+            {
+                source.Withdraw(amount);
+                destination.Deposit(amount);
+                Console.WriteLine("Transfer completed");
+            }
+            else
+            {
+                Console.WriteLine("Transfer Failed");
             }
 
-            
+
+
         }
     }
 }

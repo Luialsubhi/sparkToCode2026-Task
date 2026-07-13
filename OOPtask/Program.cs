@@ -85,7 +85,10 @@
         }
         public int PIN
         {
-            set { pin = value; }
+            set
+            {
+                pin = value;
+            }
         }
 
     }
@@ -505,6 +508,34 @@
                  Console.WriteLine("account is not overdrawn");
             }
             ////////////////////////////////////////////////////////////////////////
+            //case 19
+            Console.WriteLine("choose");
+            Console.WriteLine("1.Ali");
+            Console.WriteLine("Ahmed ");
+
+            int choice19= Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("enter 4-digit");
+            int pin= Convert.ToInt32(Console.ReadLine());
+
+            if (choice19 == 1)
+            {
+
+                student1.PIN = pin;
+            }
+
+            else if (choice19 == 2)
+            {
+                student2.PIN = pin;
+            }
+            else
+            {
+                Console.WriteLine("pin set successfully");
+            }
+            
+
+            
+
         }
     }
 }

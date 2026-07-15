@@ -365,7 +365,25 @@ namespace HotelManagementSystem
                         break;
 
                     case 9:
+                        Console.Write("Enter Guest Name: ");
+                        string search = Console.ReadLine();
 
+                        var result = guests.Where(g =>
+                            g.guestName.ToLower().Contains(search.ToLower()));
+
+                        Console.WriteLine($"Matches : {result.Count()}");
+
+                        if (!result.Any())
+                        {
+                            Console.WriteLine("No guests matched that search.");
+                        }
+                        else
+                        {
+                            foreach (var g in result)
+                            {
+                                Console.WriteLine($"{g.guestId} - {g.guestName} - Room {g.roomNumber}");
+                            }
+                        }
                         break;
 
                     case 10:

@@ -411,6 +411,45 @@ namespace HotelManagementSystem
                         break;
 
                     case 11:
+                        Console.Write("Enter Guest ID: ");
+                        string checkId = Console.ReadLine();
+
+                        Guest checkGuest = guests.FirstOrDefault(g => g.guestId == checkId);
+
+                        if (checkGuest == null)
+                        {
+                            Console.WriteLine("Guest not found.");
+                            break;
+                        }
+
+                        if (checkGuest.roomNumber == "Not Assigned")
+                        {
+                            Console.WriteLine("This guest has no active booking.");
+                            break;
+                        }
+
+                        Room checkRoom = rooms.FirstOrDefault(r => r.roomNumber.ToString() == checkGuest.roomNumber);
+
+                        Console.WriteLine($"\nGuest : {checkGuest.guestName}");
+                        Console.WriteLine($"Room : {checkGuest.roomNumber}");
+                        Console.WriteLine($"Type : {checkRoom.roomType}");
+                        Console.WriteLine($"Check In : {checkGuest.checkInDate}");
+                        Console.WriteLine($"Nights : {checkGuest.totalNights}");
+                        Console.WriteLine($"Price : {checkRoom.pricePerNight:F2}");
+                        Console.WriteLine($"Total : {checkGuest.calculateTotalCost():F2}");
+
+                        Console.Write("\nConfirm Checkout (Y/N): ");
+                        string confirm = Console.ReadLine();
+
+                        if (confirm.ToUpper() == "Y")
+                        {
+                            checkRoom.isAvailable = true;
+                            guests.Remove(checkGuest);
+
+                            Console.WriteLine("Checkout Completed.");
+                            Console.WriteLine($"Guests : {guests.Count}");
+                            Console.WriteLine($"Rooms : {rooms.Count}");
+                        }
 
                         break;
 

@@ -454,6 +454,40 @@ namespace HotelManagementSystem
                         break;
 
                     case 12:
+                        var removableRooms = rooms
+        .Where(r => !r.isAvailable &&
+               !guests.Any(g => g.roomNumber == r.roomNumber.ToString()))
+        .OrderBy(r => r.roomNumber);
+
+                        if (!removableRooms.Any())
+                        {
+                            Console.WriteLine("No rooms can be removed.");
+                            break;
+                        }
+
+                        foreach (var r in removableRooms)
+                        {
+                            Console.WriteLine($"{r.roomNumber} - {r.roomType} - {r.pricePerNight:F2}");
+                        }
+
+                        Console.WriteLine($"Total : {removableRooms.Count()}");
+
+                        Console.Write("Remove? (Y/N): ");
+                        string ans = Console.ReadLine();
+
+                        if (ans.ToUpper() == "Y")
+                        {
+                            rooms.RemoveAll(r =>
+                                !r.isAvailable &&
+                                !guests.Any(g => g.roomNumber == r.roomNumber.ToString()));
+
+                            Console.WriteLine($"Remaining Rooms : {rooms.Count}");
+
+                            foreach (var r in rooms.Select(r => new { r.roomNumber, r.roomType }))
+                            {
+                                Console.WriteLine($"{r.roomNumber} - {r.roomType}");
+                            }
+                        }
 
                         break;
 

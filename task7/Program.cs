@@ -154,6 +154,22 @@ namespace HotelManagementSystem
                         break;
 
                     case 4:
+                        if (rooms.Count == 0)
+                        {
+                            Console.WriteLine("No rooms have been added yet.");
+                            break;
+                        }
+
+                        Console.WriteLine($"Total Rooms : {rooms.Count}");
+
+                        foreach (Room r in rooms.OrderBy(r => r.roomNumber))
+                        {
+                            Console.WriteLine("--------------------------------");
+                            Console.WriteLine($"Room Number : {r.roomNumber}");
+                            Console.WriteLine($"Room Type   : {r.roomType}");
+                            Console.WriteLine($"Price       : {r.pricePerNight:F2}");
+                            Console.WriteLine($"Status      : {(r.isAvailable ? "Available" : "Booked")}");
+                        }
 
                         break;
 

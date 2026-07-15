@@ -299,6 +299,40 @@ namespace HotelManagementSystem
                         break;
 
                     case 7:
+                        Console.WriteLine($"Total Guests : {guests.Count()}");
+                        Console.WriteLine($"Booked Guests : {guests.Count(g => g.roomNumber != "Not Assigned")}");
+
+                        Console.WriteLine($"Total Rooms : {rooms.Count()}");
+                        Console.WriteLine($"Booked Rooms : {rooms.Count(r => !r.isAvailable)}");
+
+                        if (guests.Any(g => g.roomNumber != "Not Assigned"))
+                        {
+                            Console.WriteLine($"Average Nights : {guests.Where(g => g.roomNumber != "Not Assigned").Average(g => g.totalNights):F2}");
+
+                            Console.WriteLine("\nTop 3 Guests");
+
+                            foreach (var g in guests
+                                .Where(g => g.roomNumber != "Not Assigned")
+                                .OrderByDescending(g => g.calculateTotalCost())
+                                .Take(3))
+                            {
+                                Console.WriteLine($"{g.guestName} - Room {g.roomNumber} - {g.calculateTotalCost():F2}");
+                            }
+
+                            Console.WriteLine("\nBooking Summary");
+
+                            foreach (var g in guests
+                                .Where(g => g.roomNumber != "Not Assigned")
+                                .Select(g => $"{g.guestName} - Room {g.roomNumber} - {g.totalNights} Nights - {g.calculateTotalCost():F2} OMR"))
+                            {
+                                Console.WriteLine(g);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No active bookings recorded.");
+                        }
+
 
                         break;
 

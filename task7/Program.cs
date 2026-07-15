@@ -492,6 +492,38 @@ namespace HotelManagementSystem
                         break;
 
                     case 13:
+                        Console.Write("Enter Guest ID: ");
+                        string guestID = Console.ReadLine();
+
+                        Guest extendGuest = guests.FirstOrDefault(g => g.guestId == guestID);
+
+                        if (extendGuest == null)
+                        {
+                            Console.WriteLine("Guest not found.");
+                            break;
+                        }
+
+                        if (extendGuest.roomNumber == "Not Assigned")
+                        {
+                            Console.WriteLine("This guest has no active booking.");
+                            break;
+                        }
+
+                        Console.Write("Additional Nights: ");
+                        int addNights = Convert.ToInt32(Console.ReadLine());
+
+                        if (addNights <= 0)
+                        {
+                            Console.WriteLine("Invalid value.");
+                            break;
+                        }
+
+                        extendGuest.totalNights += addNights;
+
+                        Console.WriteLine($"New Nights : {extendGuest.totalNights}");
+                        Console.WriteLine($"New Total : {extendGuest.calculateTotalCost():F2}");
+
+
 
                         break;
 

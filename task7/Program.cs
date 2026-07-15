@@ -49,6 +49,35 @@ namespace HotelManagementSystem
                 switch (choice)
                 {
                     case 1:
+                        Console.Write("Enter Room Number: ");
+                        int roomNumber = Convert.ToInt32(Console.ReadLine());
+
+                        if (rooms.Any(r => r.roomNumber == roomNumber))
+                        {
+                            Console.WriteLine("Room already exists.");
+                            break;
+                        }
+
+                        Console.Write("Enter Room Type (Single/Double/Suite): ");
+                        string roomType = Console.ReadLine();
+
+                        Console.Write("Enter Price Per Night: ");
+                        double price = Convert.ToDouble(Console.ReadLine());
+
+                        if (roomNumber <= 0 || price <= 0)
+                        {
+                            Console.WriteLine("Invalid room number or price.");
+                            break;
+                        }
+
+                        Room newRoom = new Room(roomNumber, roomType, price, true);
+                        rooms.Add(newRoom);
+
+                        Console.WriteLine("\nRoom Added Successfully.");
+                        Console.WriteLine($"Room Number : {roomNumber}");
+                        Console.WriteLine($"Room Type   : {roomType}");
+                        Console.WriteLine($"Price       : {price:F2}");
+                        Console.WriteLine($"Total Rooms : {rooms.Count}");
 
                         break;
 

@@ -528,6 +528,31 @@ namespace HotelManagementSystem
                         break;
 
                     case 14:
+                        var highest = guests
+        .Where(g => g.roomNumber != "Not Assigned")
+        .Select(g => new
+        {
+            g.guestName,
+            g.roomNumber,
+            Total = g.calculateTotalCost()
+        })
+        .OrderByDescending(g => g.Total)
+        .Take(1);
+
+                        if (!highest.Any())
+                        {
+                            Console.WriteLine("No active bookings recorded.");
+                        }
+                        else
+                        {
+                            foreach (var g in highest)
+                            {
+                                Console.WriteLine($"Guest : {g.guestName}");
+                                Console.WriteLine($"Room : {g.roomNumber}");
+                                Console.WriteLine($"Total : {g.Total:F2}");
+                            }
+                        }
+
 
                         break;
 

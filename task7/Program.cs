@@ -557,6 +557,29 @@ namespace HotelManagementSystem
                         break;
 
                     case 15:
+                        int pageSize = 3;
+
+                        Console.Write("Enter Page Number: ");
+                        int page = Convert.ToInt32(Console.ReadLine());
+
+                        int totalPages = (int)Math.Ceiling((double)guests.Count / pageSize);
+
+                        if (page < 1 || page > totalPages)
+                        {
+                            Console.WriteLine("That page does not exist.");
+                            break;
+                        }
+
+                        var pageGuests = guests
+                            .Skip((page - 1) * pageSize)
+                            .Take(pageSize);
+
+                        Console.WriteLine($"Page {page} of {totalPages}");
+
+                        foreach (var g in pageGuests)
+                        {
+                            Console.WriteLine($"{g.guestId} - {g.guestName} - {g.roomNumber}");
+                        }
 
                         break;
 

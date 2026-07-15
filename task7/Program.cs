@@ -337,6 +337,30 @@ namespace HotelManagementSystem
                         break;
 
                     case 8:
+                        Console.Write("Enter Room Number: ");
+                        int updateRoom = Convert.ToInt32(Console.ReadLine());
+
+                        Room update = rooms.FirstOrDefault(r => r.roomNumber == updateRoom);
+
+                        if (update == null)
+                        {
+                            Console.WriteLine("Room not found.");
+                            break;
+                        }
+
+                        Console.Write("New Price: ");
+                        double newPrice = Convert.ToDouble(Console.ReadLine());
+
+                        if (newPrice <= 0)
+                        {
+                            Console.WriteLine("Invalid price.");
+                            break;
+                        }
+
+                        double oldPrice = update.pricePerNight;
+                        update.pricePerNight = newPrice;
+
+                        Console.WriteLine($"Updated Successfully ({oldPrice:F2} -> {newPrice:F2})");
 
                         break;
 

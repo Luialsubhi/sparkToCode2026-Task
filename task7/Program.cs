@@ -112,6 +112,44 @@ namespace HotelManagementSystem
                         break;
 
                     case 3:
+                        Console.Write("Enter Guest ID: ");
+                        string id = Console.ReadLine();
+
+                        Console.Write("Enter Room Number: ");
+                        int bookRoom = Convert.ToInt32(Console.ReadLine());
+
+                        Guest guest = guests.FirstOrDefault(g => g.guestId == id);
+                        Room room = rooms.FirstOrDefault(r => r.roomNumber == bookRoom);
+
+                        if (guest == null)
+                        {
+                            Console.WriteLine("Guest not found.");
+                            break;
+                        }
+
+                        if (room == null)
+                        {
+                            Console.WriteLine("Room not found.");
+                            break;
+                        }
+
+                        if (!room.isAvailable)
+                        {
+                            Console.WriteLine("Room is already booked.");
+                            break;
+                        }
+
+                        guest.roomNumber = room.roomNumber.ToString();
+                        guest.roomPrice = room.pricePerNight;
+                        room.isAvailable = false;
+
+                        Console.WriteLine("\nBooking Successful.");
+                        Console.WriteLine($"Guest Name : {guest.guestName}");
+                        Console.WriteLine($"Room       : {room.roomNumber}");
+                        Console.WriteLine($"Type       : {room.roomType}");
+                        Console.WriteLine($"Price      : {room.pricePerNight:F2}");
+                        Console.WriteLine($"Nights     : {guest.totalNights}");
+                        Console.WriteLine($"Total Cost : {guest.calculateTotalCost():F2} OMR");
 
                         break;
 

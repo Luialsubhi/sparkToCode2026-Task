@@ -1,94 +1,123 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using task7;
 
-class Program
+namespace HotelManagementSystem
 {
-    static void Main()
+    class Program
     {
-        List<Room> rooms = new List<Room>();
-        List<Guest> guests = new List<Guest>();
-
-        rooms.Add(new Room
+        static void Main(string[] args)
         {
-            roomNumber = 101,
-            roomType = "Single",
-            pricePerNight = 25,
-            isAvaiable = true
-        });
+            List<Room> rooms = new List<Room>();
+            List<Guest> guests = new List<Guest>();
 
-        rooms.Add(new Room
-        {
-            roomNumber = 102,
-            roomType = "Double",
-            pricePerNight = 40,
-            isAvaiable = true
-        });
+            // Preloaded Rooms
+            rooms.Add(new Room(101, "Single", 20, true));
+            rooms.Add(new Room(102, "Single", 25, true));
+            rooms.Add(new Room(201, "Double", 35, true));
+            rooms.Add(new Room(202, "Double", 40, true));
+            rooms.Add(new Room(301, "Suite", 60, true));
+            rooms.Add(new Room(302, "Suite", 80, true));
 
-        rooms.Add(new Room
-        {
-            roomNumber = 103,
-            roomType = "Suite",
-            pricePerNight = 75,
-            isAvaiable = true
-        });
+            int choice;
 
-        rooms.Add(new Room
-        {
-            roomNumber = 104,
-            roomType = "Single",
-            pricePerNight = 30,
-            isAvaiable = true
-        });
-
-        rooms.Add(new Room
-        {
-            roomNumber = 105,
-            roomType = "Double",
-            pricePerNight = 50,
-            isAvaiable = true
-        });
-
-        rooms.Add(new Room
-        {
-            roomNumber = 106,
-            roomType = "Suite",
-            pricePerNight = 100,
-            isAvaiable = true
-        });
-
-        while (true)
-        {
-            Console.WriteLine();
-            Console.WriteLine("================================================");
-            Console.WriteLine("GRAND VISTA HOTEL — MANAGEMENT SYSTEM");
-            Console.WriteLine("================================================");
-
-            Console.WriteLine("1. Add New Room");
-            Console.WriteLine("2. Register New Guest");
-            Console.WriteLine("3. Book a Room for a Guest");
-            Console.WriteLine("4. View All Rooms");
-            Console.WriteLine("5. View All Guests");
-            Console.WriteLine("6. Search & Filter Rooms");
-            Console.WriteLine("7. Guest & Booking Statistics");
-            Console.WriteLine("8. Update Room Price");
-            Console.WriteLine("9. Guest Lookup by Name");
-            Console.WriteLine("10. Room Type Breakdown Report");
-            Console.WriteLine("11. Check Out a Guest");
-            Console.WriteLine("12. Remove Unavailable Rooms");
-            Console.WriteLine("13. Extend Guest Stay");
-            Console.WriteLine("14. Highest Revenue Booking");
-            Console.WriteLine("15. Guest Pagination Viewer");
-            Console.WriteLine("0. Exit");
-
-            Console.Write("Enter your choice: ");
-            int choice = int.Parse(Console.ReadLine());
-
-            switch (choice)
+            do
             {
+                Console.WriteLine("======================================");
+                Console.WriteLine(" GRAND VISTA HOTEL MANAGEMENT SYSTEM");
+                Console.WriteLine("======================================");
+                Console.WriteLine("1. Add New Room");
+                Console.WriteLine("2. Register New Guest");
+                Console.WriteLine("3. Book a Room for a Guest");
+                Console.WriteLine("4. View All Rooms");
+                Console.WriteLine("5. View All Guests");
+                Console.WriteLine("6. Search & Filter Rooms");
+                Console.WriteLine("7. Guest & Booking Statistics");
+                Console.WriteLine("8. Update Room Price");
+                Console.WriteLine("9. Guest Lookup by Name");
+                Console.WriteLine("10. Room Type Breakdown Report");
+                Console.WriteLine("11. Check Out a Guest");
+                Console.WriteLine("12. Remove Unavailable Rooms");
+                Console.WriteLine("13. Extend Guest Stay");
+                Console.WriteLine("14. Highest Revenue Booking");
+                Console.WriteLine("15. Guest Pagination Viewer");
+                Console.WriteLine("0. Exit");
 
-            }
+                Console.Write("\nEnter your choice: ");
+                choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+
+                        break;
+
+                    case 2:
+
+                        break;
+
+                    case 3:
+
+                        break;
+
+                    case 4:
+
+                        break;
+
+                    case 5:
+
+                        break;
+
+                    case 6:
+
+                        break;
+
+                    case 7:
+
+                        break;
+
+                    case 8:
+
+                        break;
+
+                    case 9:
+
+                        break;
+
+                    case 10:
+
+                        break;
+
+                    case 11:
+
+                        break;
+
+                    case 12:
+
+                        break;
+
+                    case 13:
+
+                        break;
+
+                    case 14:
+
+                        break;
+
+                    case 15:
+
+                        break;
+
+                    case 0:
+                        Console.WriteLine("Thank you for using the system.");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        break;
+                }
+
+            } while (choice != 0);
         }
     }
 }

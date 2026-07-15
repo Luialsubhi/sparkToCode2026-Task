@@ -1,25 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace task7
+namespace HotelManagementSystem
 {
-    internal class Room
+    class Room
     {
-        public int roomNumber;
-        public string roomType;
-        public double pricePerNight;
-        public bool isAvaiable;
+        public int roomNumber { get; set; }
+        public string roomType { get; set; }
+        public double pricePerNight { get; set; }
+        public bool isAvailable { get; set; }
+
+        public Room(int roomNumber, string roomType, double pricePerNight, bool isAvailable)
+        {
+            this.roomNumber = roomNumber;
+            this.roomType = roomType;
+            this.pricePerNight = pricePerNight;
+            this.isAvailable = isAvailable;
+        }
 
         public void displayRoom()
         {
-            Console.WriteLine("room number  :" + roomNumber);
-            Console.WriteLine("room type" + roomType);
-            Console.WriteLine("price " + pricePerNight);
-            Console.WriteLine("status:" + isAvaiable);
-             
+            Console.WriteLine($"Room Number : {roomNumber}");
+            Console.WriteLine($"Room Type   : {roomType}");
+            Console.WriteLine($"Price       : {pricePerNight:F2} OMR");
+            Console.WriteLine($"Status      : {(isAvailable ? "Available" : "Booked")}");
+            Console.WriteLine("---------------------------------------");
         }
     }
 }

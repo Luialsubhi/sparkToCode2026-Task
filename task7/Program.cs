@@ -174,6 +174,23 @@ namespace HotelManagementSystem
                         break;
 
                     case 5:
+                        if (guests.Count == 0)
+                        {
+                            Console.WriteLine("No guests have been registered yet.");
+                            break;
+                        }
+
+                        Console.WriteLine($"Total Guests : {guests.Count}");
+
+                        foreach (Guest g in guests.OrderBy(g => g.guestName))
+                        {
+                            Console.WriteLine("--------------------------------");
+                            Console.WriteLine($"Guest ID    : {g.guestId}");
+                            Console.WriteLine($"Guest Name  : {g.guestName}");
+                            Console.WriteLine($"Room Number : {g.roomNumber}");
+                            Console.WriteLine($"Check In    : {g.checkInDate}");
+                            Console.WriteLine($"Nights      : {g.totalNights}");
+                        }
 
                         break;
 

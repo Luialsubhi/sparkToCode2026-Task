@@ -387,6 +387,26 @@ namespace HotelManagementSystem
                         break;
 
                     case 10:
+                        string[] roomTypes = { "Single", "Double", "Suite" };
+
+                        foreach (string t in roomTypes)
+                        {
+                            int count = rooms.Count(r => r.roomType == t);
+
+                            Console.WriteLine($"\nRoom Type : {t}");
+                            Console.WriteLine($"Count : {count}");
+
+                            if (count > 0)
+                            {
+                                Console.WriteLine($"Average Price : {rooms.Where(r => r.roomType == t).Average(r => r.pricePerNight):F2}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Average Price : N/A");
+                            }
+                        }
+
+                        Console.WriteLine($"\nOverall Average : {rooms.Average(r => r.pricePerNight):F2}");
 
                         break;
 

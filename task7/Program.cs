@@ -195,6 +195,106 @@ namespace HotelManagementSystem
                         break;
 
                     case 6:
+                        int option;
+
+                        do
+                        {
+                            Console.WriteLine("\n===== Search & Filter Rooms =====");
+                            Console.WriteLine("1. Show Available Rooms");
+                            Console.WriteLine("2. Filter By Room Type");
+                            Console.WriteLine("3. Filter By Maximum Price");
+                            Console.WriteLine("4. Room Price Statistics");
+                            Console.WriteLine("0. Back");
+
+                            Console.Write("Choose: ");
+                            option = Convert.ToInt32(Console.ReadLine());
+
+                            switch (option)
+                            {
+                                case 1:
+
+                                    var availableRooms = rooms
+                                        .Where(r => r.isAvailable)
+                                        .OrderBy(r => r.pricePerNight);
+
+                                    Console.WriteLine($"Available Rooms: {availableRooms.Count()}");
+
+                                    if (!availableRooms.Any())
+                                    {
+                                        Console.WriteLine("No rooms found.");
+                                    }
+                                    else
+                                    {
+                                        foreach (var r in availableRooms)
+                                        {
+                                            Console.WriteLine($"{r.roomNumber} - {r.roomType} - {r.pricePerNight:F2}");
+                                        }
+                                    }
+
+                                    break;
+
+                                case 2:
+
+                                    Console.Write("Enter Room Type: ");
+                                    string type = Console.ReadLine();
+
+                                    var roomType6 = rooms
+                                        .Where(r => r.roomType.Equals(type, StringComparison.OrdinalIgnoreCase));
+
+                                    Console.WriteLine($"Found: {roomType6.Count()}");
+
+                                    if (!roomType6.Any())
+                                    {
+                                        Console.WriteLine("No rooms found.");
+                                    }
+                                    else
+                                    {
+                                        foreach (var r in roomType6)
+                                        {
+                                            Console.WriteLine($"{r.roomNumber} - {r.roomType} - {r.pricePerNight:F2}");
+                                        }
+                                    }
+
+                                    break;
+
+                                case 3:
+
+                                    Console.Write("Maximum Price: ");
+                                    double maxPrice = Convert.ToDouble(Console.ReadLine());
+
+                                    var priceRooms = rooms
+                                        .Where(r => r.isAvailable && r.pricePerNight <= maxPrice)
+                                        .OrderBy(r => r.pricePerNight);
+
+                                    Console.WriteLine($"Found: {priceRooms.Count()}");
+
+                                    if (!priceRooms.Any())
+                                    {
+                                        Console.WriteLine("No rooms found.");
+                                    }
+                                    else
+                                    {
+                                        foreach (var r in priceRooms)
+                                        {
+                                            Console.WriteLine($"{r.roomNumber} - {r.roomType} - {r.pricePerNight:F2}");
+                                        }
+                                    }
+
+                                    break;
+
+                                case 4:
+
+                                    Console.WriteLine($"Total Rooms : {rooms.Count()}");
+                                    Console.WriteLine($"Available   : {rooms.Count(r => r.isAvailable)}");
+                                    Console.WriteLine($"Average     : {rooms.Average(r => r.pricePerNight):F2}");
+                                    Console.WriteLine($"Minimum     : {rooms.Min(r => r.pricePerNight):F2}");
+                                    Console.WriteLine($"Maximum     : {rooms.Max(r => r.pricePerNight):F2}");
+
+                                    break;
+                            }
+
+                        } while (option != 0);
+
 
                         break;
 
